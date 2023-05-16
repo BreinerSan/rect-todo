@@ -1,9 +1,13 @@
+import "./styles/TodoItem.css";
+
 function TodoItem(props) {
+
   return (
-    <li>
-      <span>V</span>
+    <li className="todo-item">
+      <button className={`check ${props.completed ? "check--active":""}`}>
+      </button>
       <p>{props.text}</p>
-      <span>X</span>
+      <button className="close-item"></button>
     </li>
   );
 }

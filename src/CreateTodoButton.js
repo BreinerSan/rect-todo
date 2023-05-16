@@ -1,7 +1,15 @@
+import "./styles/CreateTodoButton.css";
 
 function CreateTodoButton() {
+
+    const createTodo = (e) => {
+        console.log(e.target);
+    };
+
     return (
-        <button type="button">Enviar</button>
+        <div className="createTodo-container">
+            <button type="button" onClick={(event) => createTodo(event)}>+</button>
+        </div>
     );
 }
 
