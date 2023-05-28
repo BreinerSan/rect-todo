@@ -3,7 +3,7 @@ import "./styles/CreateTodoButton.css";
 function CreateTodoButton() {
 
     const createTodo = (e) => {
-        console.log(e.target);
+        console.log(e);
     };
 
     return (
