@@ -16,14 +16,24 @@ const deafultTodos = [
   {text: 'Tarea 5', completed: true},
   {text: 'Tarea 6', completed: false},
   {text: 'Tarea 7', completed: false},
+  {text: 'Tarea 8', completed: true},
 ];
 
 function App() {
+
+  const [todos, setTodos] = React.useState(deafultTodos);
+  const [searchValue, setSearchValue] = React.useState('');
+
+  const completedTodos = todos.filter(todo => todo.completed === true).length;
+  const totalTodos = todos.length;
+
+  console.log('buscando', searchValue);
+
   return (
     <React.Fragment>
 
-      <TodoCounter completed={16} total={25} />
-      <TodoSearch />
+      <TodoCounter completed={completedTodos} total={totalTodos} />
+      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
 
       <TodoList>
         {deafultTodos.map(todo => 
