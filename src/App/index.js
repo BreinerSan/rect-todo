@@ -1,9 +1,10 @@
 // import logo from './logo.svg';
-import { TodoCounter } from './TodoCount';
-import { TodoSearch } from './TodoSearch';
-import { TodoList } from './TodoList';
-import { TodoItem } from './TodoItem';
-import { CreateTodoButton } from './CreateTodoButton';
+import { TodoCounter } from '../TodoCount/index';
+import { TodoSearch } from '../TodoSearch/index';
+import { TodoList } from '../TodoList/index';
+import { TodoItem } from '../TodoItem/index';
+import { CreateTodoButton } from '../CreateTodoButton/index';
+import { useLocalStorage } from './useLocalStorage';
 import './App.css';
 
 import React from 'react';
@@ -20,29 +21,6 @@ import React from 'react';
 // ];
 
 // localStorage.setItem('todos', JSON.stringify(deafultTodos));
-
-function useLocalStorage(itemName, initialValue) {
-
-  const localStorageItem = localStorage.getItem(itemName);
-
-  let parsedItem;
-
-  if(localStorageItem){
-    parsedItem = JSON.parse(localStorageItem);
-  }else{
-    parsedItem = initialValue;
-    localStorage.setItem(itemName, JSON.stringify(parsedItem));
-  }
-
-  const [item, setItem] = React.useState(parsedItem);
-
-  const saveItem = (newItem) => {
-    localStorage.setItem(itemName, JSON.stringify(newItem));
-    setItem(newItem);
-  };
-
-  return [item, saveItem];
-}
 
 function App() {
 

@@ -1,6 +1,6 @@
 import React from "react";
-import "./styles/TodoSearch.css";
-import searchIcon from "./assets/search-icon.svg";
+import "./TodoSearch.css";
+import searchIcon from "./../assets/search-icon.svg";
 
 function TodoSearch({searchValue, setSearchValue}) {
     return (
