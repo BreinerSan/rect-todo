@@ -10,13 +10,15 @@ import React from 'react';
 import './App.css';
 
 function AppUI({
-    completedTodos,
-    totalTodos,
-    searchValue,
-    setSearchValue,
-    searchedTodos,
-    completeTodo,
-    deleteTodo
+  loading,
+  error,
+  completedTodos,
+  totalTodos,
+  searchValue,
+  setSearchValue,
+  searchedTodos,
+  completeTodo,
+  deleteTodo
 }){
     return (
     <React.Fragment>
@@ -25,6 +27,10 @@ function AppUI({
       <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
 
       <TodoList>
+        {loading && <p>Loading...</p>}
+        {error && <p>Error al cargar los items</p>}
+        {!loading && searchedTodos.length === 0 && <p>Crea tu primer todo</p>}
+
         {searchedTodos.map(todo => 
           <TodoItem 
             key={todo.text}
