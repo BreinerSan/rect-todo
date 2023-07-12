@@ -4,6 +4,9 @@ import { TodoSearch } from '../TodoSearch/index';
 import { TodoList } from '../TodoList/index';
 import { TodoItem } from '../TodoItem/index';
 import { CreateTodoButton } from '../CreateTodoButton/index';
+import { TodosLoading} from '../TodosLoading/index';
+import { TodosError } from '../TodosError/index';
+import { TodosEmpty } from '../TodosEmpty/index';
 
 import React from 'react';
 
@@ -27,9 +30,9 @@ function AppUI({
       <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
 
       <TodoList>
-        {loading && <p>Loading...</p>}
-        {error && <p>Error al cargar los items</p>}
-        {!loading && searchedTodos.length === 0 && <p>Crea tu primer todo</p>}
+        {loading && <TodosLoading />}
+        {error && <TodosError />}
+        {!loading && searchedTodos.length === 0 && <TodosEmpty />}
 
         {searchedTodos.map(todo => 
           <TodoItem 
