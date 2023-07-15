@@ -43,3 +43,16 @@ function useLocalStorage(itemName, initialValue) {
 }
 
 export { useLocalStorage }
+
+// const deafultTodos = [
+//   {text: 'Cortar cebolla', completed: false},
+//   {text: 'Tarea 2', completed: true},
+//   {text: 'Tarea 3', completed: false},
+//   {text: 'Tarea 4', completed: true},
+//   {text: 'Tarea 5', completed: true},
+//   {text: 'Tarea 6', completed: false},
+//   {text: 'Tarea 7', completed: false},
+//   {text: 'Tarea 8', completed: true},
+// ];
+
+// localStorage.setItem('todos', JSON.stringify(deafultTodos));
