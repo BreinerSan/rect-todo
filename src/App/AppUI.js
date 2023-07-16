@@ -8,6 +8,7 @@ import { TodosLoading} from '../TodosLoading/index';
 import { TodosError } from '../TodosError/index';
 import { TodosEmpty } from '../TodosEmpty/index';
 import { Modal } from '../Modal';
+import { TodoForm } from '../TodoForm';
 
 import { TodoContext } from '../TodoContext';
 
@@ -52,7 +53,7 @@ function AppUI(){
 
       {openModal && (
         <Modal>
-          La funcionalidad de agregar todos
+          <TodoForm />
         </Modal>
       )}
     </React.Fragment>

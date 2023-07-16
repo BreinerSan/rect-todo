@@ -6,6 +6,7 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+  z-index: 1;
 }
 
 .createTodo-container button {
@@ -16,7 +17,7 @@
   background-color: #7996f5;
   cursor: pointer;
   color: aliceblue;
-  /*   background: url("./assets/circle-check.svg") no-repeat;
+    /* background: url("../assets/circle-check.svg") no-repeat;
   background-size: 90%;
   background-position: center center; */
 }
